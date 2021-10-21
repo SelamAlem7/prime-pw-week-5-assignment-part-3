@@ -4,7 +4,7 @@ console.log('***** Music Collection *****')
 let collection = [];
 //end collection as empty
 
-//create a funtion names addToCollection
+//CREATING THE 'addToCollection' FUNCTION:
 function addToCollection ( title, artist, yearPublished) {
   let album = {
     title: title,
@@ -14,76 +14,66 @@ function addToCollection ( title, artist, yearPublished) {
 collection.push(album);
 return album;
 }
+//END CREATING THE 'addToCollection' FUNCTION.
 
-//Here i will be adding my 6 albums:
+
+//TESTING THE 'addToCollection' FUNCTION TO ADD 6 MORE ALBUMS:
+
 addToCollection('Take Time', 'Giveon', 2020 );
-console.log('Added:', collection[0]);
+console.log('Added:', collection[0]);//TEST 1 = WORKED!!
 
 addToCollection('Over It', 'Summer Walker', 2019 );
-console.log('Added:', collection[1]);
+console.log('Added:', collection[1]);//TEST 2 = WORKED!!
 
 addToCollection('Trilogy', 'The Weeknd', 2012);
-console.log('Added:', collection[2]);
+console.log('Added:', collection[2]);//TEST 3 = WORKED!!
 
 addToCollection('Take Care', 'Drake', 2011);
-console.log('Added:', collection[3]);
+console.log('Added:', collection[3]);//TEST 4 = WORKED!!
 
 addToCollection('Aster', 'Aster', 1989);
-console.log('Added:', collection[4]);
+console.log('Added:', collection[4]);//TEST 5 = WORKED!!
 
 addToCollection('Seven Days', 'PartyNextDoor', 2017);
-console.log('Added:', collection[5]);
+console.log('Added:', collection[5]);//TEST 6 = WORKED!!
 
+//END TESTING THE 'addToCollection' FUNCTION = ALL WORKED!!
+
+//CREATING A CONSOLE LOG TO SHOW FULL collection ARRAY:
 console.log('The Full Collection:', collection);
+//END CONSOLE LOGGING FULL collection ARRAY = WORKED!!
 
-//Creating showCollection functions
+//CREATING THE showCollection FUNCTION:
 function showCollection (array) {
-  console.log('Number of items in the array', array.length);
-  let i = 0
-  while (i < 7) {
-    console.log(collection[0,1], 'by', collection[0,2], 'published in', collection[0,3],);
-    i++;
+  for (let i = 0; i < array.length; i++){
+    console.log( `${array[i].title} by ${array[i].artist}, publishes in ${array[i].yearPublished}`);
   }
 };
-// for (let i = 0; i < array.length; i++){
-//    console.log((array.title), 'by', array, 'published in',  );
-//    return array[i];
-//  }
+//sidenote: you can try this with a 'for of' loop as well = (let [variable] of [array name])
+//END CREATING THE showCollection FUNCTION
 
-//[array.title, 'by', +array.artist, 'published in', +array.yearPublished,]
+
+//TESTING OUT THE 'showCollection' FUNCTION:
 showCollection(collection);
+//END TESTING THE 'showCollection' FUNCTION = WORKED!
 
 
-// function find(value, array) {
-//    for(let i = 0; i < arrray.length; i++ ) {
-//       if(i === array[i]) {
-//          return true;
-//       }
-//    }
-//    return false;
-// }
 
+
+
+//CREATING THE 'findByArtist' FUNCTION:
 function findByArtist(artist){
-  let artistSearch = 0;
-  for (let i = 0; i < collection.length; i++ ){
-    const artist = collection[i];
-    if(artist === artistSearch)
-    console.log(i);
-  }
+  let artistSearched = [];
+  for (let i = 0; i < collection.length; i++){
+    if( artist === collection[i].artist)
+    artistSearched.push(artist)
+    return artistSearched;
+  };
+  return [];
 }
+//END CREATING THE 'findByArtist' FUNCTION.
 
-
-//   for (let i = 0; i < collection.length; i++ ) {
-//     if(i === collection[i]) {
-//       return true;
-//     }
-//   }
-//   return false;
-// }
-
-// let artistSearch = collection;
-findByArtist(collection);
-console.log(findByArtist("The Weeknd", collection));
-
-// let favNumbers = ["2","23","7","17","9"];
-// console.log(find("7", favNumbers));
+//TESTING OUT THE 'findByArtist' FUNCTION:
+console.log(findByArtist("Drake", collection));//IS IN MY COLLECTION
+console.log(findByArtist("Travis Scott", collection));//IS NOT IN MY COLLECTION
+//END TESTING THE 'findByArtist' FUNCTION = WORKED!
