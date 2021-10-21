@@ -34,4 +34,22 @@ console.log('Added:', collection[4]);
 addToCollection('Seven Days', 'PartyNextDoor', 2017);
 console.log('Added:', collection[5]);
 
-console.log('The Full Collection:', collection);
+console.log('The Full Collection:', collection[0,5]);
+
+//Creating showCollection functions
+function showCollection (array) {
+  console.log('Number of items in the array', array.length);
+  let i = 0
+  while (i < 7) {
+    console.log(array.title, 'by', array.artist, 'published in', array.yearPublished,);
+    i++;
+  }
+};
+
+// for (let i = 0; i < array.length; i++){
+//    console.log((array.title), 'by', array, 'published in',  );
+//    return array[i];
+//  }
+
+//[array.title, 'by', +array.artist, 'published in', +array.yearPublished,]
+showCollection(collection);
