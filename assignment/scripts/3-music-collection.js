@@ -65,15 +65,17 @@ showCollection(collection);
 function findByArtist(artist){
   let artistSearched = [];
   for (let i = 0; i < collection.length; i++){
-    if( artist === collection[i].artist)
-    artistSearched.push(artist)
-    return artistSearched;
-  };
-  return [];
-}
-//END CREATING THE 'findByArtist' FUNCTION.
+    if( artist === collection[i].artist){
+      artistSearched.push(collection[i])
+      return artistSearched;
+    }
+  }
+  return artistSearched;
+}//END CREATING THE 'findByArtist' FUNCTION.
 
 //TESTING OUT THE 'findByArtist' FUNCTION:
-console.log(findByArtist("Drake", collection));//IS IN MY COLLECTION
-console.log(findByArtist("Travis Scott", collection));//IS NOT IN MY COLLECTION
+console.log(findByArtist("Drake"));//IS IN MY COLLECTION
+console.log(findByArtist("Travis Scott"));//IS NOT IN MY COLLECTION
+console.log(findByArtist("Amy"));//IS IN MY COLLECTION
+
 //END TESTING THE 'findByArtist' FUNCTION = WORKED!
